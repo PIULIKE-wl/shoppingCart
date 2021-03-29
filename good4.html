@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+       body{
+            background:url('images/bg.jpg');
+    	    background-repeat:no-repeat;
+    	    background-size:100% auto;
+       }
+       .title{
+           height: 51px;
+           width: 100%;
+           background-color: rgb(201, 100, 226);
+           text-align: center;
+           line-height: 51px;
+           font-size: 40px;
+           color: cornsilk;
+           text-shadow: 0 0 5px ;
+       }
+       .main{
+        width: 800px;
+        height: 830px;
+        margin: 50px auto;
+        /* border:1px solid red; */
+        background: #00000080;
+        display: flex;
+        flex-wrap: wrap;
+       }
+       .img{
+           position: relative;
+           width: 300px;
+           height: 387px;
+           margin: 20px 40px;
+           overflow: hidden;
+       }
+       #img img{
+            width: 300px;
+            height: 315px; 
+       }
+       .sum{
+           position: absolute;
+           top: 333px;
+           left: 0;
+           height: 50px;
+           width: 298px;
+           transition: all 0.3s;
+       }
+       .sum li{
+           width: 50px;
+           height: 50px;
+           margin-left: 15px;
+       }
+       #img{
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 320px;
+           width: 1200px;
+           transition: all 0.3s;
+       }
+       .img ul li{
+           float: left;
+       }
+       .message{
+           width: 420px;
+           height: 385px;
+           margin-top: 20px;
+       }
+       .name{
+           color: #fff;
+       }
+       .price{
+           display: flex;
+           width: 420px;
+           height: 54px;
+           margin-top: 20px;
+       }
+       .price1{
+           width: 76px;
+           height: 30px;
+           display: inline-block;
+           font-size: 5px;
+           text-align: center;
+           line-height: 30px;
+           color: seashell;
+           background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+           margin-top: 12px;
+
+       }
+       .price2{
+           display: inline-block;
+           width: 134px;
+           height: 53px;
+           margin-left: 20px;
+           font-size: 40px;
+           line-height: 53px;
+           color: red;
+           margin-left: 52px;
+       }
+       .kind{
+           list-style: none;
+           color: #fff;
+       }
+       .kind dt{
+           float: left;
+       }
+       .kinds{
+           float: left;
+       }
+       .kinds ul li{
+           float: left;
+           font-size: 5px;
+           padding: 5px 5px;
+           margin: 6px;
+           color: white;
+           border: 1px solid #fff;
+       }
+       .kinds ul li:hover{
+        background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+        color: black;
+        border: 1px solid black;
+       }
+       .idx{
+           width: 114px;
+           height: 222px;
+           color: thistle;
+           line-height: 222px;
+           text-align: center;
+           background-color: tomato;
+       }
+       .data{
+           width: 660px;
+           height: 220px;
+       }
+       .data ul li{
+           width: 206px;
+           height: 24px;
+           font-size: 6px;
+           float: left;
+           list-style: none;
+           margin: 6px;
+           color: white;
+       }
+       .button{
+           width: 802px;
+           height: 58px;
+           text-align: center;
+       }
+       .button a{
+           display: inline-block;
+           width: 200px;
+           height: 58px;
+           margin-left: 30px;
+           text-align: center;
+           line-height: 58px;
+           text-decoration: none;
+           color: white;
+           background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+           transition: all 0.3s;
+       }
+       .button a:hover{
+           border-radius: 35px;
+           color: black;
+       }
+       .s{
+           height: 50px;
+           width: 800px;
+           background-color: #ff5100;
+       }
+       .timetext{
+           width: 800px;
+           height: 20px;
+           text-align: center;
+           line-height: 20px;
+           color: white;
+       }
+       .time{
+           width: 800px;
+           height: 30px;
+           text-align: center;
+           line-height: 30px;
+           color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="title">
+        商城
+    </div>
+    <div class="main">
+        <div class="s">
+            <div class="timetext">秒杀倒计时</div>
+            <div class="time" id="time"></div>
+        </div>
+        <div class="img">
+            <ul id="img">
+                <li><img src="images/pad1.jpg"></li>
+                <li><img src="images/pad2.jpg"></li>
+                <li><img src="images/pad3.jpg"></li>
+                <li><img src="images/pad4.jpg"></li>
+            </ul>
+            <ul class="sum">
+                <li style="margin-left: 0;" name="sum"><img src="images/pad1.webp"></li>
+                <li name="sum"><img src="images/pad2.webp"></li>
+                <li name="sum"><img src="images/pad3.webp"></li>
+                <li name="sum"><img src="images/pad4.webp"></li>
+            </ul>
+        </div>
+        <div class="message">
+            <div class="name">
+                新款Apple/苹果 iPad Air4代（第四代）10.9英寸正品国行ipadair4
+            </div>
+            <div class="price">
+                <span class="price1">价格</span>
+                <span class="price2">3498￥</span>
+            </div>
+            <dl class="kind">
+                <dt>分类</dt>
+                <dd class="kinds">
+                    <ul>
+                        <a href="#"><li>iPad Air4 深空灰【原封美版】</li></a>
+                        <a href="#"><li>iPad Air4 天蓝色【原封美版】</li></a>
+                        <a href="#"><li>iPad Air4 银色【原封美版】</li></a>
+                        <a href="#"><li>iPad Air4 绿色【原封美版】</li></a>
+                        <a href="#"><li>iPad Air4 玫瑰金【原封美版】</li></a>
+                        <a href="#"><li>iPad Air4 深空灰【原封国行】</li></a>
+                        <a href="#"><li>iPad Air4 天蓝色【原封国行】</li></a>
+                        <a href="#"><li>iPad Air4 银色【原封国行】</li></a>
+                        <a href="#"><li>iPad Air4 绿色【原封国行】</li></a>
+                        <a href="#"><li>iPad Air4 玫瑰金【原封国行】</li></a>
+                        <a href="#"><li>19款Air3金色【原封国行】此颜色</li></a>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="idx">
+            宝贝详情
+        </div>
+        <div class="data">
+            <ul>
+                <li>产品名称: Apple/苹果 iPad Air</li>
+                <li>Apple型号: iPhone X</li>
+                <li>网络类型: WIFI版 WIFI+4G（插卡版）</li>
+                <li>品牌: Apple/苹果</li>
+                <li>型号: iPad Air</li>
+                <li>存储类型: 固态硬盘 </li>
+                <li>内存容量: 4GB</li>
+                <li>存储容量: 64GB 256GB	</li>
+                <li>成色: 全新	</li>
+                <li>售后服务: 全国联保	</li>
+                <li>核心数: 四核心</li>
+                <li>CPU主频: 64 位架构的 A14 仿生</li>
+                <li>处理器型号: A14</li>
+                <li>触摸屏类型: 不详</li>
+                <li>摄像头类型: 双摄像头</li>
+                <li>屏幕尺寸: 10.5英寸</li>
+                <li>版本类型: 中国大陆</li>
+                <li>操作系统: iOS</li>
+                
+            </ul>
+        </div>
+        <div class="button">
+            <a href="#">购买</a>
+            <a href="#">加入购物车</a>
+        </div>
+    </div>
+    <script>
+         
+          function time(){
+         var end = new Date("Mar 31 2021 00:00:00");
+         var now = new Date();
+         var rest;
+         var time = document.getElementById("time");
+         
+         rest = parseInt((end.getTime()-now.getTime())/1000);
+        var d = parseInt(rest/3600/24);
+        var h = parseInt(rest/3600%24);
+        var m = parseInt(rest/60%60);
+        var s = parseInt(rest%60);
+
+        if(rest>0){
+            time.innerHTML = d+"天"+h+"小时"+m+"分钟"+s+"秒";
+        }else{
+            time.innerHTML = "秒杀结束";
+        }
+        };
+
+        setInterval(time,1000);
+
+        var mi;
+        var img = document.getElementById("img");
+        var i = 0;
+        var flag=[1,0,0,0];
+        var sum = document.getElementsByName("sum");
+        examine();
+        function moveImg(){
+                mi = setInterval(function(){
+                if(i>-900){
+                i = i-300;
+            }else{
+                i=0;
+            }
+            img.style.left = i+"px";
+           if(i!=0){
+            flag[i/(-300)-1]=0;
+           }else{
+               flag[3]=0;
+           }
+            flag[i/(-300)]=1;
+            examine();
+            },3000);
+        }
+        moveImg();
+
+        // var mi = setInterval(moveImg,3000);
+
+        
+        for(let j=0;j<sum.length;j++)
+        {
+            sum[j].onclick = function(){
+                clearInterval(mi);
+                img.style.left = j*(-300)+"px";
+                flag=[0,0,0,0];
+                flag[j]=1;
+                examine();
+                i = j*(-300);
+                setTimeout(moveImg,300);
+            }
+        }
+
+        function examine(){
+            for(let i=0;i<sum.length;i++)
+            {
+                if(flag[i]==1){
+                    sum[i].style.border = "2px solid red";
+                }else{
+                    sum[i].style.border = "0px solid red";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

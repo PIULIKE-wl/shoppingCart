@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 1095px;
+            background-color:rgb(51, 51, 71);
+            background:url("images/bg.jpg");
+    		background-repeat:no-repeat;
+    		background-size:100% auto;
+        }
+        .title{
+            height: 600px;
+            position: relative;
+            top: 250px;
+            left: 0%;
+            font-size: 100px;
+            color: #fff;
+        }
+        .title span{
+            position: absolute;
+            text-shadow: 0 0 50px rgb(224, 224, 231);
+            margin-top: 294px;
+        }
+        .login{
+            position: relative;
+            left: 888px;
+            top: -192px;
+            display: inline-block;
+            height: 450px;
+            width: 400px;
+            background: #00000080;
+            text-align: center;
+        }
+        .loginx h1{
+            color: #fff;
+            font-size: 70px;
+        }
+        #userName,
+        #passWord{
+            width: 200px;
+            height: 20px;
+            border: 0;
+            background: #ffffff00;
+            padding: 5px 10px;
+            color: #fff;
+            border-bottom: 3px solid #fff;
+            font-size: 17px;
+            margin-top: 10px;
+        }
+        #btn{
+            border: 0;
+            width: 150px;
+            height: 30px;
+            margin-top: 52px;
+            font-size: 20px;
+            border-radius: 25px;
+            background-image: linear-gradient(to right, #de0000 0%, #0046ff 100%);
+            color:#fff
+        }
+        #userNameNone{
+            display: block;
+            color: #00000080;
+            font-size: 12px;
+        }
+        #passWordWrong{
+            display: block;
+            color: #00000080;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+     <div class="title">
+        <span>商城</span>
+    </div>
+    <div class="login">
+        <div class="loginx">
+            <h1>login</h1>
+            <div>
+                <input type="text" placeholder="用户名" id="userName">
+                <span id="userNameNone">用户名不存在</span>
+            </div>
+            <div>
+                <input type="password" placeholder="密码" id="passWord">
+                <span id="passWordWrong">密码错误</span>
+            </div>
+            <div>
+                <button id="btn">登录</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById("btn");
+        var userName = document.getElementById("userName");
+        var userNameNone = document.getElementById("userNameNone");
+        var passWord = document.getElementById("passWord");
+        var passWordWrong = document.getElementById("passWordWrong");
+        btn.onclick = function(){
+            if(userName.value == ""){
+                userName.style.borderBottom="3px solid #de0000";
+                userNameNone.innerHTML = "用户名不能为空";
+                userNameNone.style.color = "#de0000";
+            }else{
+                if(passWord.value == ""){
+                passWord.style.borderBottom="3px solid #de0000";
+                passWordWrong.innerHTML = "密码不能为空";
+                passWordWrong.style.color = "#de0000";
+            }else{
+                if(passWord.value != "123456"){
+                passWord.style.borderBottom="3px solid #de0000";
+                passWordWrong.innerHTML = "密码错误";
+                passWordWrong.style.color = "#de0000";
+            }
+            }
+            }
+            if(userName.value != "admin"&&userName.value != ""){
+                userName.style.borderBottom="3px solid #de0000";
+                userNameNone.innerHTML = "用户名不存在";
+                userNameNone.style.color = "#de0000";
+            }
+            if(userName.value == "admin"&&passWord.value != "123456"){
+                userName.style.borderBottom="3px solid #fff";
+                userNameNone.style.color = "#00000080";
+            }
+            if(userName.value == "admin"&&passWord.value == "123456"){
+                // alert("11111")
+                location = "shoppingCart.html";
+            }
+        }
+</script>
+</body>
+</html>

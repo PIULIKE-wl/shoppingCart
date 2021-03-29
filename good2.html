@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+       body{
+            background:url('images/bg.jpg');
+    	    background-repeat:no-repeat;
+    	    background-size:100% auto;
+       }
+       .title{
+           height: 51px;
+           width: 100%;
+           background-color: rgb(201, 100, 226);
+           text-align: center;
+           line-height: 51px;
+           font-size: 40px;
+           color: cornsilk;
+           text-shadow: 0 0 5px ;
+       }
+       .main{
+        width: 800px;
+        height: 830px;
+        margin: 50px auto;
+        /* border:1px solid red; */
+        background: #00000080;
+        display: flex;
+        flex-wrap: wrap;
+       }
+       .img{
+           position: relative;
+           width: 300px;
+           height: 387px;
+           margin: 20px 40px;
+           overflow: hidden;
+       }
+       #img img{
+            width: 300px;
+            height: 315px; 
+       }
+       .sum{
+           position: absolute;
+           top: 333px;
+           left: 0;
+           height: 50px;
+           width: 298px;
+           transition: all 0.3s;
+       }
+       .sum li{
+           width: 50px;
+           height: 50px;
+           margin-left: 15px;
+       }
+       #img{
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 320px;
+           width: 920px;
+           transition: all 0.3s;
+       }
+       .img ul li{
+           float: left;
+       }
+       .message{
+           width: 420px;
+           height: 385px;
+           margin-top: 20px;
+       }
+       .name{
+           color: #fff;
+       }
+       .price{
+           display: flex;
+           width: 420px;
+           height: 54px;
+           margin-top: 20px;
+       }
+       .price1{
+           width: 76px;
+           height: 30px;
+           display: inline-block;
+           font-size: 5px;
+           text-align: center;
+           line-height: 30px;
+           color: seashell;
+           background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+           margin-top: 12px;
+
+       }
+       .price2{
+           display: inline-block;
+           width: 134px;
+           height: 53px;
+           margin-left: 20px;
+           font-size: 40px;
+           line-height: 53px;
+           color: red;
+           margin-left: 52px;
+       }
+       .kind{
+           list-style: none;
+           color: #fff;
+       }
+       .kind dt{
+           float: left;
+       }
+       .kinds{
+           float: left;
+       }
+       .kinds ul li{
+           float: left;
+           font-size: 5px;
+           padding: 5px 5px;
+           margin: 6px;
+           color: white;
+           border: 1px solid #fff;
+       }
+       .kinds ul li:hover{
+        background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+        color: black;
+        border: 1px solid black;
+       }
+       .idx{
+           width: 114px;
+           height: 222px;
+           color: thistle;
+           line-height: 222px;
+           text-align: center;
+           background-color: tomato;
+       }
+       .data{
+           width: 660px;
+           height: 220px;
+       }
+       .data ul li{
+           width: 206px;
+           height: 24px;
+           font-size: 6px;
+           float: left;
+           list-style: none;
+           margin: 6px;
+           color: white;
+       }
+       .button{
+           width: 802px;
+           height: 58px;
+           text-align: center;
+       }
+       .button a{
+           display: inline-block;
+           width: 200px;
+           height: 58px;
+           margin-left: 30px;
+           text-align: center;
+           line-height: 58px;
+           text-decoration: none;
+           color: white;
+           background-image: linear-gradient(to right, #bd00de 0%, #ff5100 100%);
+           transition: all 0.3s;
+       }
+       .button a:hover{
+           border-radius: 35px;
+           color: black;
+       }
+       .s{
+           height: 50px;
+           width: 800px;
+           background-color: #ff5100;
+       }
+       .timetext{
+           width: 800px;
+           height: 20px;
+           text-align: center;
+           line-height: 20px;
+           color: white;
+       }
+       .time{
+           width: 800px;
+           height: 30px;
+           text-align: center;
+           line-height: 30px;
+           color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="title">
+        商城
+    </div>
+    <div class="main">
+        <div class="s">
+            <div class="timetext">秒杀倒计时</div>
+            <div class="time" id="time"></div>
+        </div>
+        <div class="img">
+            <ul id="img">
+                <li><img src="images/watch1.jpg"></li>
+                <li><img src="images/watch2.jpg"></li>
+                <li><img src="images/watch3.jpg"></li>
+            </ul>
+            <ul class="sum">
+                <li style="margin-left: 0;" name="sum"><img src="images/watch1.webp"></li>
+                <li name="sum"><img src="images/watch2.webp"></li>
+                <li name="sum"><img src="images/watch3.webp"></li>
+            </ul>
+        </div>
+        <div class="message">
+            <div class="name">
+                正品DW-11手表小绿表皮带防水石英表超薄
+            </div>
+            <div class="price">
+                <span class="price1">价格</span>
+                <span class="price2">238￥</span>
+            </div>
+            <dl class="kind">
+                <dt>分类</dt>
+                <dd class="kinds">
+                    <ul>
+                        <a href="#"><li>金色网带(条丁金壳孔雀绿)</li></a>
+                        <a href="#"><li>棕皮(条丁金壳孔雀绿)</li></a>
+                        <a href="#"><li>兰绿兰尼龙带(条丁金壳孔雀绿)</li></a>
+                        <a href="#"><li>金色网带(条丁金壳白面)</li></a>
+                        <a href="#"><li>棕皮(条丁金壳白面)</li></a>
+                        <a href="#"><li>金色网带(条丁金壳黑面)</li></a>
+                        <a href="#"><li>黑色网带(条丁金壳黑面)</li></a>
+                        <a href="#"><li>棕皮(条丁金壳黑面)</li></a>
+                        <a href="#"><li>银色网带(条丁白壳孔雀绿)</li></a>
+                        <a href="#"><li>黑皮(条丁白壳孔雀绿)</li></a>
+                        <a href="#"><li>银色网带(条丁白壳白面)</li></a>
+                        <a href="#"><li>黑皮(条丁白壳白面)</li></a>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="idx">
+            宝贝详情
+        </div>
+        <div class="data">
+            <ul>
+                <li>品牌: DW-11</li>
+                <li>型号: DW-11</li>
+                <li>风格: 奢华</li>
+                <li>形状: 圆形</li>
+                <li>成色: 全新</li>
+                <li>保修: 店铺保修 </li>
+                <li>品牌产地: 欧美</li>
+                <li>流行元素: 精钢</li>
+                <li>机芯类型: 石英机芯</li>
+                <li>表带材质: 精钢</li>
+                <li>表盘厚度: 7mm</li>
+                <li>表盘直径: 32mm</li>
+                <li>表壳材质: 钛合金</li>
+                <li>上市时间: 2021年春季</li>
+                <li>附加功能: 日历</li>
+                <li>显示方式: 指针式</li>
+                <li>机芯产地: 日本</li>
+                <li>表冠类型: 普通</li>
+                
+            </ul>
+        </div>
+        <div class="button">
+            <a href="#">购买</a>
+            <a href="#">加入购物车</a>
+        </div>
+    </div>
+    <script>
+         
+          function time(){
+         var end = new Date("Mar 31 2021 00:00:00");
+         var now = new Date();
+         var rest;
+         var time = document.getElementById("time");
+         
+         rest = parseInt((end.getTime()-now.getTime())/1000);
+        var d = parseInt(rest/3600/24);
+        var h = parseInt(rest/3600%24);
+        var m = parseInt(rest/60%60);
+        var s = parseInt(rest%60);
+
+        if(rest>0){
+            time.innerHTML = d+"天"+h+"小时"+m+"分钟"+s+"秒";
+        }else{
+            time.innerHTML = "秒杀结束";
+        }
+        };
+
+        setInterval(time,1000);
+
+        var mi;
+        var img = document.getElementById("img");
+        var i = 0;
+        var flag=[1,0,0];
+        var sum = document.getElementsByName("sum");
+        examine();
+        function moveImg(){
+                mi = setInterval(function(){
+                if(i>-600){
+                i = i-300;
+            }else{
+                i=0;
+            }
+            img.style.left = i+"px";
+           if(i!=0){
+            flag[i/(-300)-1]=0;
+           }else{
+               flag[2]=0;
+           }
+            flag[i/(-300)]=1;
+            examine();
+            },3000);
+        }
+        moveImg();
+
+        // var mi = setInterval(moveImg,3000);
+
+        
+        for(let j=0;j<sum.length;j++)
+        {
+            sum[j].onclick = function(){
+                clearInterval(mi);
+                img.style.left = j*(-300)+"px";
+                flag=[0,0,0];
+                flag[j]=1;
+                examine();
+                i = j*(-300);
+                setTimeout(moveImg,300);
+            }
+        }
+
+        function examine(){
+            for(let i=0;i<sum.length;i++)
+            {
+                if(flag[i]==1){
+                    sum[i].style.border = "2px solid red";
+                }else{
+                    sum[i].style.border = "0px solid red";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
